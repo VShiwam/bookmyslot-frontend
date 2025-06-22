@@ -17,7 +17,7 @@ function HomePage() {
   const [events, setEvents] = useState<Event[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/events')
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/events`)
       .then((res) => res.json())
       .then((data) => setEvents(data))
       .catch((err) => console.error('Failed to load events:', err));
